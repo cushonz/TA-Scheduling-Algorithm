@@ -1,21 +1,9 @@
 import csv
 
+
+
+
 class TaArr:
-	def __init__(self,filename,inputsize):
-	
-		self.applicants = [None] * inputsize
-		
-		with open(filename,'r') as csv_file:
-			data = csv.reader(csv_file)
-			(next(data)) # Skip
-			(next(data)) # Skip
-			i = 0
-			for line in data:
-				self.applicants[i] = TA(line)
-				
-				# Parse each line of the CSV and extract each applicant who will be assigned to position i
-				i += 1
-			pass
 	
 	def countIn(self,filename):	# A simple method to count the number of lines in our CSV file.
 	
@@ -27,6 +15,27 @@ class TaArr:
 			for line in data:
 				i+=1
 		return i
+
+	def __init__(self,filename):
+		
+		size = self.countIn(filename)
+	
+		self.applicants = [None] * size
+		
+		with open(filename,'r') as csv_file:
+			data = csv.reader(csv_file)
+			(next(data)) # Skip
+			(next(data)) # Skip
+			i = 0
+			for line in data:
+				self.applicants[i] = TA(line)
+				i+=1
+				#print(line)
+				# Parse each line of the CSV and extract each applicant who will be assigned to position i
+				
+			pass
+	
+	
 
 	
 
@@ -56,8 +65,9 @@ class TA :
 		
 		self.exp = ['X'] * 20
 		
-		self.CSVin("studs.csv", self.parentArr)
-		self.splitArr(self.parentArr)
+		#self.CSVin("studs.csv", self.parentArr)	
+		self.splitArr(line)
+		
 
 	def countIn(self,filename):	
 	
@@ -77,35 +87,34 @@ class TA :
 			next(data) #Header
 			i = 0
 			for line in data:
-				target_Arr[i] = next(data)
+				target_Arr[i] = line
 				i+=1
-				
 		pass
 	
 	def splitArr(self,parentArr):
 		for i in range(0,4):
 			for j in range(0,8):
-				if parentArr[0][j+7] == 'No':
+				if parentArr[j+7] == 'No':
 					self.time[i][j] = 0
-				elif parentArr[0][j+7] == 'Open':
+				elif parentArr[j+7] == 'Open':
 					self.time[i][j] = 1
 				else :
 					self.time[i][j] = 3
 		
-		#print ("Time table populated.")
+		# ("Time table populated.")
 		
 		for info in range(0,8):
-			self.student_info[info] = parentArr[0][info]
+			self.student_info[info] = parentArr[info]
 		#print ("Student infromation updated.")
 		
 		for info in range(40,42):
-			if (parentArr[0][info] == 'No'):
+			if (parentArr[info] == 'No'):
 				self.exp[info-40] = False
-			elif (parentArr[0][info] == 'Yes'):
+			elif (parentArr[info] == 'Yes'):
 				self.exp[info-40] = True
 				
 		for info in range(43,63):
-			if (parentArr[0][info] == 'X'):
+			if (parentArr[info] == 'X'):
 				self.exp[info-43] = True
 			else :
 				self.exp[info-43] = False
@@ -117,6 +126,4 @@ class TA :
 			
 pass
 
-tas = TaArr("studs.csv",50)
-print(tas.applicants[0].student_info[3])
 
