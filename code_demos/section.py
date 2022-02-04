@@ -21,7 +21,7 @@ class Section:
 
 	def __init__(self,line):
 	
-		self.sect_dict = {
+		self.info = {
 		'Subj' : None,
 		'Cat': None,
 		'Sec': None,
@@ -37,18 +37,18 @@ class Section:
 		}
 		
 		
-		self.info = line
+		self.unorg = line
 				
-		self.sect_dict['Subj'] = self.info[0]
-		self.sect_dict['Cat'] = self.info[1]
-		self.sect_dict['Sec'] = self.info[2]
-		self.sect_dict['Title'] = self.info[3]
-		self.sect_dict['Name'] = self.info[4]
-		self.sect_dict['Days'] = self.info[5]
-		self.sect_dict['Start'] = self.info[6]
-		self.sect_dict['End'] = self.info[7]
-		self.sect_dict['Facil'] = self.info[8]
-		self.sect_dict['Campus'] = self.info[9]
+		self.info['Subj'] = self.unorg[0]
+		self.info['Cat'] = self.unorg[1]
+		self.info['Sec'] = self.unorg[2]
+		self.info['Title'] = self.unorg[3]
+		self.info['Name'] = self.unorg[4]
+		self.info['Days'] = self.unorg[5]
+		self.info['Start'] = self.unorg[6]
+		self.info['End'] = self.unorg[7]
+		self.info['Facil'] = self.unorg[8]
+		self.info['Campus'] = self.unorg[9]
 		
 		
 		
