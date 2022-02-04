@@ -1,5 +1,5 @@
 import TA, section, csv
-
+#
 
 def inBurg(app):			# Checks if the TA object passed to it is in Ellensburg and able to TA
 	
