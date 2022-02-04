@@ -1,6 +1,6 @@
 import TA, section, csv
 #KEKEKEKEKEKEKEKEKEKEKE
-
+#more kekeke
 def inBurg(app):			# Checks if the TA object passed to it is in Ellensburg and able to TA
 	
 	if app.student_info[7] == 'No' :
