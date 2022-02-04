@@ -1,0 +1,46 @@
+Sub,Cat,Sec,Title,Name,Days,S Time,E Time,Facil ID,Campus
+CS,102,1,Health and Technology,"Salter,Rosemary", T  TH,9:00AM,9:50AM,SAMU171,EBURG
+CS,105,1,The Logical Basis of Computing,"Abdul-Wahid,Sarah",,:AM,:AM,,EBURG
+CS,105,1,The Logical Basis of Computing,"Abdul-Wahid,Sarah", T  TH,11:00AM,11:50AM,SAMU171,EBURG
+CS,107,1,Make a Game with Computer Sci,"Harrison,Tatiana F", T  TH,2:00PM,2:50PM,SAMU147,EBURG
+CS,107,1,Make a Game with Computer Sci,"Harrison,Tatiana F",M  W,2:00PM,2:50PM,,EBURG
+CS,109,1,Quantitative Reasoning: Python,"Abdul-Wahid,Sarah", T  TH,1:00PM,1:50PM,SAMU171,EBURG
+CS,110,A01,Programming Fundamentals I,"Hueffed,Joseph Dominic",  W,6:00PM,6:45PM,ONLINE,WEB
+CS,110,A01,Programming Fundamentals I,"Hueffed,Joseph Dominic",  W,6:45PM,7:30PM,ONLINE,WEB
+CS,111,1,Programming Fundamentals II,"Harrison,Tatiana F",M  W TH,11:00AM,11:50AM,,EBURG
+CS,111,1,Programming Fundamentals II,"Harrison,Tatiana F", T,11:00AM,11:50AM,SAMU147,EBURG
+CS,111,2,Programming Fundamentals II,"Harrison,Tatiana F",M  W TH,12:00PM,12:50PM,,EBURG
+CS,111,2,Programming Fundamentals II,"Harrison,Tatiana F", T,12:00PM,12:50PM,SAMU147,EBURG
+CS,112,1,Intro Data Science in Python,"Abdul-Wahid,Sarah", T  TH,2:00PM,2:50PM,SAMU148,EBURG
+CS,184,1,PADstone,"Salter,Rosemary", T  TH,12:00PM,12:50PM,SAMU171,EBURG
+CS,184,1,PADstone,"Salter,Rosemary", T  TH,12:00PM,12:50PM,SAMU171,EBURG
+CS,301,1,Data Structures,"Dovhalets,Dmytro",  W,1:00PM,1:50PM,SAMU147,EBURG
+CS,301,1,Data Structures,"Dovhalets,Dmytro",  W,1:00PM,1:50PM,SAMU147,EBURG
+CS,302,1,Adv Data Str & File Proc,"Dovhalets,Dmytro",  W,9:00AM,9:50AM,SAMU148,EBURG
+CS,302,2,Adv Data Str & File Proc,"Dovhalets,Dmytro",  W,10:00AM,10:50AM,SAMU148,EBURG
+CS,311,A01,Computer Architecture I,"Davendra,Donald David",,:AM,:AM,,WEB
+CS,312,A01,Computer Architecture II,"Davendra,Donald David",,:AM,:AM,,WEB
+CS,325,1,Tech Wrtg in CS,"Salter,Rosemary", T  TH,10:00AM,10:50AM,SAMU171,EBURG
+CS,325,2,Tech Wrtg in CS,"Salter,Rosemary", T  TH,2:00PM,2:50PM,SAMU171,EBURG
+CS,361,1,Princ Lang Design I,"Leitert,Arne",M  W,3:00PM,3:50PM,,EBURG
+CS,361,1,Princ Lang Design I,"Leitert,Arne", T  TH,3:00PM,3:50PM,SAMU148,EBURG
+CS,362,A01,Princ Lang Design II,"Yepdjio Nkouanga,Hermann",  W,2:00PM,2:50PM,ONLINE,WEB
+CS,362,A01,Princ Lang Design II,"Yepdjio Nkouanga,Hermann",,:AM,:AM,ONLINE,WEB
+CS,362,A02,Princ Lang Design II,"Yepdjio Nkouanga,Hermann",  W,3:00PM,3:50PM,ONLINE,WEB
+CS,362,A02,Princ Lang Design II,"Yepdjio Nkouanga,Hermann",,:AM,:AM,ONLINE,WEB
+CS,380,A01,Intro Software Engineering,"McKinley III,Douglas Edouard",,:AM,:AM,,WEB
+CS,392,1,Lab Exp Teach CS,"Palmquist,Bruce C", T,:AM,:AM,SEE DEPT,EBURG
+CS,420,A01,Database Management Systems,"White,Nathan Andrew",M T W TH,11:00AM,11:50AM,ONLINE,WEB
+CS,427,1,Algorithm Analysis,"Leitert,Arne",M  W,12:00PM,12:50PM,,EBURG
+CS,427,1,Algorithm Analysis,"Leitert,Arne", T  TH,12:00PM,12:50PM,SAMU148,EBURG
+CS,430,A01,Cybersecurity,"Andonie,Razvan",,:AM,:AM,,WEB
+CS,440,1,Computer Graphics,"Dovhalets,Dmytro",  W,12:00PM,12:50PM,SAMU147,EBURG
+CS,470,A01,Operating Systems,"Vajda,Szilard",M T W TH,8:00AM,8:50AM,ONLINE,WEB
+CS,470,A02,Operating Systems,"Vajda,Szilard",M T W TH,9:00AM,9:50AM,ONLINE,WEB
+CS,480,1,Advanced Software Engineering,,M  W,1:00PM,1:50PM,,EBURG
+CS,480,1,Advanced Software Engineering,"Leitert,Arne", T  TH,1:00PM,1:50PM,SAMU148,EBURG
+CS,481,A01,Capstone Project,"Vajda,Szilard",M T W TH,10:00AM,10:50AM,ONLINE,WEB
+CS,481,A02,Capstone Project,"Vajda,Szilard",M T W TH,11:00AM,11:50AM,ONLINE,WEB
+CS,481,A03,Capstone Project,"Andonie,Razvan",M T W TH,10:00AM,10:50AM,ONLINE,WEB
+CS,489,1,Senior Colloquium,"Harrison,Tatiana F", T,3:00PM,3:50PM,,EBURG
+CS,492,1,Lab Exp Tch CS,"Palmquist,Bruce C", T,:AM,:AM,SEE DEPT,EBURG
