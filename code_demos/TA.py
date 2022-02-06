@@ -49,21 +49,21 @@ class TA :
 		
 		self.numbCol = 60
 		
-		self.parentArr = [0] * self.numbCol
+		self.parentArr = line
 		
 		
 		self.student_info = [0] * 8
 		
 		self.time = [
 		
-		[0,0,0,0,0,0,0,0],
-		[0,0,0,0,0,0,0,0],
-		[0,0,0,0,0,0,0,0],
-		[0,0,0,0,0,0,0,0]
+		[0,0,0,0,0,0,0,0], #Monday
+		[0,0,0,0,0,0,0,0], #Tuesday
+		[0,0,0,0,0,0,0,0], #Wednesday
+		[0,0,0,0,0,0,0,0]  #Thursday
 		
 		]
 		
-		self.exp = ['X'] * 20
+		self.exp = ['X'] * 26
 		
 		#self.CSVin("studs.csv", self.parentArr)	
 		self.splitArr(line)
@@ -94,9 +94,9 @@ class TA :
 	def splitArr(self,parentArr):
 		for i in range(0,4):
 			for j in range(0,8):
-				if parentArr[j+7] == 'No':
+				if parentArr[j+8] == 'No':
 					self.time[i][j] = 0
-				elif parentArr[j+7] == 'Open':
+				elif parentArr[j+8] == 'Open':
 					self.time[i][j] = 1
 				else :
 					self.time[i][j] = 3
@@ -107,17 +107,10 @@ class TA :
 			self.student_info[info] = parentArr[info]
 		#print ("Student infromation updated.")
 		
-		for info in range(40,42):
-			if (parentArr[info] == 'No'):
-				self.exp[info-40] = False
-			elif (parentArr[info] == 'Yes'):
-				self.exp[info-40] = True
-				
-		for info in range(43,63):
-			if (parentArr[info] == 'X'):
-				self.exp[info-43] = True
-			else :
-				self.exp[info-43] = False
+		
+		
+		for info in range(40,62):
+			self.exp[info-40] = parentArr[info]
 				
 		
 				
