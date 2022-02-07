@@ -34,6 +34,7 @@ def qualified(TA_obj,cat_numb):		#Checks if the TA is qualified for the specifie
 	
 def timeCheck(TA_obj,dayMap,hour):		#the individual section will contain the days that the section meets along with the hours.
 		for day in dayMap:
+			print(hour)
 			if TA_obj.time[day][hour] == 1:
 				return True
 			else:
@@ -95,14 +96,9 @@ TAs = TA.TaArr("studs.csv")
 C = section.SectionArr("schedule.csv",45)
 offered = sorted(all_subj(C))
 
-dm = dayMap(C.classes[2].info['Days'])
-
-#print(dm)
-#print(timeCheck(TAs.applicants[0],dm,2))
 
 
-#print(TAs.applicants[0].time)
-for class_sections in C.classes :
+for class_sections in C.classes : #Class section 
 	poss = []
 	CID = class_sections.info['Cat']
 	daySet = dayMap(class_sections.info['Days'])
@@ -115,13 +111,11 @@ for class_sections in C.classes :
 		else:
 			time_stringS = AM_PM(class_sections.info['Start'])
 			time_stringE = AM_PM(class_sections.info['End'])
-			for student in TAs.applicants:
+			for student in TAs.applicants:							#Students
 				if inBurg(student):
 					if qualified(student,CID):
 						if timeCheck(student,daySet,time_stringS):
-							if timeCheck(student,daySet,time_stringE):
-								print("Pass")
-							
+							print("Pass")
 	else:
 		pass
 
