@@ -63,7 +63,7 @@ class TA :
 		
 		]
 		
-		self.exp = ['X'] * 26
+		self.exp = ['X'] * 27
 		
 		#self.CSVin("studs.csv", self.parentArr)	
 		self.splitArr(line)
@@ -94,9 +94,9 @@ class TA :
 	def splitArr(self,parentArr):
 		for i in range(0,4):
 			for j in range(0,8):
-				if parentArr[j+8] == 'No':
+				if parentArr[(i*8)+j+8] == 'Conflict' or parentArr[j+8] == 'conflict':
 					self.time[i][j] = 0
-				elif parentArr[j+8] == 'Open':
+				elif parentArr[(i*8)+j+8] == 'Open' or parentArr[j+8] == 'open' :
 					self.time[i][j] = 1
 				else :
 					self.time[i][j] = 3

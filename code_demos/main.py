@@ -27,14 +27,14 @@ def ClassPos(cat_numb):		#Finds the position of the class in the array so that i
 
 def qualified(TA_obj,cat_numb):		#Checks if the TA is qualified for the specified class number
 	loc = ClassPos(cat_numb)
-	if TA_obj.exp[loc] != 'X':
+	#print("location: " + str(loc))
+	if TA_obj.exp[loc+2] != 'X':
 		return False
 	else :
 		return True
 	
 def timeCheck(TA_obj,dayMap,hour):		#the individual section will contain the days that the section meets along with the hours.
 		for day in dayMap:
-			print(hour)
 			if TA_obj.time[day][hour] == 1:
 				return True
 			else:
@@ -97,13 +97,14 @@ C = section.SectionArr("schedule.csv",45)
 offered = sorted(all_subj(C))
 
 
-
 for class_sections in C.classes : #Class section 
-	poss = []
 	CID = class_sections.info['Cat']
 	daySet = dayMap(class_sections.info['Days'])
 	time_stringS = class_sections.info['Start']
-	print(time_stringS)
+	print("-----------------------------------------")
+	print(CID + " with " + class_sections.info['Name'])
+	print("-----------------------------------------")
+	
 	if time_stringS != ':AM':
 		if int(time_stringS[0]) > 3:
 			print("Outside of TA-able hours")
@@ -115,8 +116,11 @@ for class_sections in C.classes : #Class section
 				if inBurg(student):
 					if qualified(student,CID):
 						if timeCheck(student,daySet,time_stringS):
-							print("Pass")
+							pass
+							print(student.student_info[0]+ " " + student.student_info[1] + ": Eligble for TAing "
+							+ CID + " at " + class_sections.info['Start'])
 	else:
+		print("No compatible combo")
 		pass
 
 	
