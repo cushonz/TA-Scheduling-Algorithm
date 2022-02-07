@@ -102,7 +102,7 @@ for class_sections in C.classes : #Class section
 	daySet = dayMap(class_sections.info['Days'])
 	time_stringS = class_sections.info['Start']
 	print("-----------------------------------------")
-	print(CID + " with " + class_sections.info['Name'])
+	print(CID + " with " + class_sections.info['Name']+ " at " + class_sections.info['Start'])
 	print("-----------------------------------------")
 	
 	if time_stringS != ':AM':
@@ -117,8 +117,7 @@ for class_sections in C.classes : #Class section
 					if qualified(student,CID):
 						if timeCheck(student,daySet,time_stringS):
 							pass
-							print(student.student_info[0]+ " " + student.student_info[1] + ": Eligble for TAing "
-							+ CID + " at " + class_sections.info['Start'])
+							print(student.student_info[0]+ " " + student.student_info[1])
 	else:
 		print("No compatible combo")
 		pass
