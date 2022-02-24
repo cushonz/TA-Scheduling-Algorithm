@@ -89,21 +89,105 @@ def AM_PM(time_string):
 	else:
 		return index+4
 		
+		
 
+
+def Qmap(Q):
+	if Q == "Winter":
+			return 1
+	elif Q == "Spring":
+			return 2
+	elif Q == "Summer":
+			return 3
+	else :
+			return 4
+
+def prioritizeQ(elig):
+
+	wint = []
+	spring = []
+	summer = []
+	fall = []
+	
+	ta_sorted = []
+	
+	for ta in elig:
+		ta.mult = Qmap(ta.student_info[4])
+		if Qmap(ta.student_info[4]) == 1:
+			wint.append(ta)
+		if Qmap(ta.student_info[4]) == 2:
+			spring.append(ta)
+		if Qmap(ta.student_info[4]) == 3:
+			summer.append(ta)
+		if Qmap(ta.student_info[4]) == 4:
+			fall.append(ta)
+			
+	for ta in wint:
+		ta_sorted.append(ta)
+		
+	for ta in spring:
+		ta_sorted.append(ta)
+		
+	for ta in summer:
+		ta_sorted.append(ta)
+		
+	for ta in fall:
+		ta_sorted.append(ta)
+	
+	return ta_sorted
+		
+
+def prioritizeY(by_quarter):
+	now = []
+	next = []
+	fut = []
+	sorted_tas = []
+	
+	for ta in by_quarter:
+		if (ta.student_info[5] == '2022'):
+			now.append(ta)
+		elif (ta.student_info[5] == '2023'):
+			next.append(ta)
+		elif (ta.student_info[5] == '2024'):
+			fut.append(ta)
+	for ta in now:
+		sorted_tas.append(ta)
+	for ta in next:
+		sorted_tas.append(ta)
+	for ta in fut:
+		sorted_tas.append(ta)
+	
+	return sorted_tas
+	
+def posSplit(elig):
+	TA1 = []
+	TA2 = []
+	for ta in elig:
+		if ta.student_info[6] == '392':
+			TA1.append(ta)
+		elif ta.student_info[6] == '492':
+			TA2.append(ta)
+	return TA1,TA2
+		
+
+#----------Start Driver Code ------------------------
 
 TAs = TA.TaArr("studs.csv")
 
 C = section.SectionArr("schedule.csv",45)
 offered = sorted(all_subj(C))
 
+elig = []
+assigned = []
 
 for class_sections in C.classes : #Class section 
+	
 	CID = class_sections.info['Cat']
 	daySet = dayMap(class_sections.info['Days'])
 	time_stringS = class_sections.info['Start']
-	print("-----------------------------------------")
-	print(CID + " with " + class_sections.info['Name']+ " at " + class_sections.info['Start'])
-	print("-----------------------------------------")
+	#print("-----------------------------------------")
+	#print(CID + " with " + class_sections.info['Name']+ " at " + class_sections.info['Start'])
+	#print("-----------------------------------------")
 	
 	if time_stringS != ':AM':
 		if int(time_stringS[0]) > 3:
@@ -112,12 +196,60 @@ for class_sections in C.classes : #Class section
 		else:
 			time_stringS = AM_PM(class_sections.info['Start'])
 			time_stringE = AM_PM(class_sections.info['End'])
-			for student in TAs.applicants:							#Students
+			for student in TAs.applicants:
+				if student.student_info[2] in assigned :
+					print(len(TAs.applicants))
+					TAs.applicants.remove(student)
+											#Students
 				if inBurg(student):
 					if qualified(student,CID):
 						if timeCheck(student,daySet,time_stringS):
-							pass
-							print(student.student_info[0]+ " " + student.student_info[1])
+							elig.append(student)
+			
+		gq = prioritizeY(elig)
+			
+		all_ = posSplit(gq)
+			
+		TA492 = all_[1]
+		TA392 = all_[0]
+			
+		if (class_sections.info['TA392_ID'] == None):
+			i = 0
+			j = 0
+			if TA392:
+				while (TA392[i].student_info[2] in assigned and i < len(TA392)-1):
+					i+=1
+				if (i < len(TA392)):
+					class_sections.info['TA392_ID'] = TA392[i].student_info[2]
+				else:
+					class_sections.info['TA392_ID'] = None
+				
+				
+		if (class_sections.info['TA492_ID'] == None):
+			if TA492 :	
+				while (TA492[j].student_info[2] in assigned and j < len(TA492)-1):
+					j+=1
+				if (j < len(TA492)):
+					class_sections.info['TA492_ID'] = TA492[j].student_info[2]
+				else:
+					class_sections.info['TA492_ID'] = None
+			else:
+				print("No eligible TA's in 492 array, using next 392 student.")
+				if TA392:
+					class_sections.info['TA492_ID'] = TA392[i+1].student_info[2]	
+				else:
+					print("No TA available")	
+								
+		print("-------------------------------")
+		print("CS"+class_sections.info['Cat'])
+		print(class_sections.info['TA392_ID'])
+		print(class_sections.info['TA492_ID'])
+		print("-------------------------------")
+		assigned.append(class_sections.info['TA392_ID'])
+		assigned.append(class_sections.info['TA492_ID'])
+		
+			
+			
 	else:
 		print("No compatible combo")
 		pass
