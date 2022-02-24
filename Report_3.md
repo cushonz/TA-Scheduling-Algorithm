@@ -34,6 +34,6 @@ Prototype Stages:
 	
 Plan moving Forward:
 	
-The priority is to find the reason for duplicate assignments, after fixing this the code will be mostly functional aside from edge cases and some minor optimizations that can be made as far as prioritization goes.
-After fixing the bugs that currently exist in the code the user interface will then begin being developed.	
-Aditionally I would like to add the ability for the assignments to be written to a file or 'pickled'.
+	The priority is to find the reason for duplicate assignments, after fixing this the code will be mostly functional aside from edge cases and some minor optimizations that can be made as far as prioritization goes.
+	After fixing the bugs that currently exist in the code the user interface will then begin being developed.	
+	Aditionally I would like to add the ability for the assignments to be written to a file or 'pickled'.
