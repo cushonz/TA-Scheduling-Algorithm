@@ -1,4 +1,4 @@
-import TA, section, csv
+import TA.py, resources/section, csv
 
 
 def inBurg(app):			# Checks if the TA object passed to it is in Ellensburg and able to TA
@@ -172,9 +172,9 @@ def posSplit(elig):
 
 #----------Start Driver Code ------------------------
 
-TAs = TA.TaArr("studs.csv")
+TAs = TA.TaArr("resources/studs.csv")
 
-C = section.SectionArr("schedule.csv",45)
+C = section.SectionArr("resources/schedule.csv",45)
 offered = sorted(all_subj(C))
 
 elig = []
@@ -200,6 +200,7 @@ for class_sections in C.classes : #Class section
 				if student.student_info[2] in assigned :
 					print(len(TAs.applicants))
 					TAs.applicants.remove(student)
+					pass
 											#Students
 				if inBurg(student):
 					if qualified(student,CID):
