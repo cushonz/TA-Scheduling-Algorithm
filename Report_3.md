@@ -5,6 +5,7 @@ Zachary Cushon
 Current stage:
 
 Logic:
+	
 	The program currently makes evaluations on if a student is a match for a given TA position, this is done for all students in order to construct a list of eligible students.
 	
 	This list is then sorted by graduation year and split into and array of 392 applicants and and array of 492 applicants
