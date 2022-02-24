@@ -14,7 +14,7 @@ This approach was simple yet effective. Infromation is neatly indexed and easily
 Moving forward we will need to implements a few more specific checks as well as making assignments in different order to optimize the end result of all assignments.
 
 ---------------------------------------------------------------------------------------------------
-#Update 2/23/22
+# Update 2/23/22
 
 The code currently is capable of organizing and assiging students to the 392 and 492 positions
 
