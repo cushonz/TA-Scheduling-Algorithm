@@ -2,18 +2,19 @@
 Git Repository for CS480 project
 
 The project so far :
-  Loops through all classes
-    Extracts important infromation about the class
-    Loop through all students
-      check student info against class info and discard non matches.
-      print list.
+
+  	*Loops through all classes
+	*Extracts important infromation about the class
+	*Loop through all students
+	*check student info against class info and discard non matches.
+	*print list.
       
+![alt_text](https://github.com/cushonz/CS480-Project/blob/main/documentation/prototype_output.png)
       
 This approach was simple yet effective. Infromation is neatly indexed and easily accesible.
 
 Moving forward we will need to implements a few more specific checks as well as making assignments in different order to optimize the end result of all assignments.
 
----------------------------------------------------------------------------------------------------
 # Update 2/23/22
 
 The code currently is capable of organizing and assiging students to the 392 and 492 positions
