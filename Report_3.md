@@ -6,9 +6,6 @@ Darrel Wheeler
 
 Wayne Miles
 
-## Current stage:
-
-Currently, the codes logic is mostly functional, the GUI and backend need to be married along with some simple bug fixes.
 
 ## Logic:
 	
@@ -43,11 +40,11 @@ Some thing I have tried to help with troubleshooting include:
 
 The code initially printed out a list of eligible students for each class section given the :
 
-* time
+* Time
 
-* topic
+* Topic
 
-* location of class sessions
+* Location of class sessions
 
 This list is now stored and will be sorted in order to prioritize assignment, rather than just printing the result, after sorting, the TA assignment will be made from the top down in an effort to ensure that people who need the position will get it.
 	
