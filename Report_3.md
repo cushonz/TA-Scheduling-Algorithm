@@ -1,7 +1,9 @@
 # Report 3 - Prototypes & Testing 
 
 Zachary Cushon
+
 Darrel Wheeler
+
 Wayne Miles
 
 ## Current stage:
@@ -35,7 +37,19 @@ Some thing I have tried to help with troubleshooting include:
 
 ## Prototype Stages:
 	
-The initial prototype can be seen in the documentation folder, the code initially printed out a list of eligible students for each class section given the time,topic, and location of the class section.
+### Initial prototype 
+
+![alt_text](https://github.com/cushonz/CS480-Project/blob/main/documentation/prototype_output.png)
+
+The code initially printed out a list of eligible students for each class section given the :
+
+* time
+
+* topic
+
+* location of class sessions
+
+This list is now stored and will be sorted in order to prioritize assignment, rather than just printing the result, after sorting, the TA assignment will be made from the top down in an effort to ensure that people who need the position will get it.
 	
 The GUI is currently in a test stage and is not linked with the driver code in any way as of right now.
 	
