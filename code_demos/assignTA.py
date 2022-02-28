@@ -1,4 +1,6 @@
-import TA.py, resources/section, csv
+import TA
+import section
+import csv
 
 
 def inBurg(app):			# Checks if the TA object passed to it is in Ellensburg and able to TA
