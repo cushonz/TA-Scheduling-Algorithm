@@ -1,8 +1,11 @@
 Report 3 - Prototypes & Testing 
 
 Zachary Cushon
+Darrel Wheeler
 
 Current stage:
+
+	Right now the codes logic does work now we need to print it to the GUI that has been made. But the buttons are active and do work.
 
 Logic:
 	
@@ -25,11 +28,15 @@ Bugs so Far:
 	2. Manually making assignments to verify the program is behaving as intended.
 		
 	3. Print the length of the TA array to find when students are not being removed.
+	
+	4. being able to print the work code to the GUI
 		
 
 Prototype Stages:
 	
 	The initial prototype can be seen in the documentation folder, the code initially printed out a list of eligible students for each class section given the time,topic, and location of the class section.
+	
+	The GUI still does not print to the screen but we do how how to do this, but the interface is completed and have working buttons and able to access the code itself.
 	
 	
 Plan moving Forward:
@@ -37,3 +44,4 @@ Plan moving Forward:
 	The priority is to find the reason for duplicate assignments, after fixing this the code will be mostly functional aside from edge cases and some minor optimizations that can be made as far as prioritization goes.
 	After fixing the bugs that currently exist in the code the user interface will then begin being developed.	
 	Aditionally I would like to add the ability for the assignments to be written to a file or 'pickled'.
+	We plan to find a way tp print out the specific students student by assining numbers to them and adding a list to be able to acces them and print out what they are avalable for. 
