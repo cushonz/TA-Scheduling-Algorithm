@@ -2,6 +2,7 @@
 
 Zachary Cushon
 Darrel Wheeler
+Wayne Miles
 
 ## Current stage:
 
