@@ -36,7 +36,7 @@ Some thing I have tried to help with troubleshooting include:
 	
 ### Initial prototype 
 
-![alt_text](https://github.com/cushonz/CS480-Project/blob/main/documentation/prototype_output.png)
+![alt_text](/documentation/prototype_output.png)
 
 The code initially printed out a list of eligible students for each class section given the :
 
