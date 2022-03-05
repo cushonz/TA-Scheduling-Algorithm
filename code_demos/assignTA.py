@@ -182,8 +182,9 @@ offered = sorted(all_subj(C))
 elig = []
 assigned = []
 
+C.classes.reverse()
+
 for class_sections in C.classes : #Class section 
-	
 	CID = class_sections.info['Cat']
 	daySet = dayMap(class_sections.info['Days'])
 	time_stringS = class_sections.info['Start']
@@ -198,16 +199,10 @@ for class_sections in C.classes : #Class section
 		else:
 			time_stringS = AM_PM(class_sections.info['Start'])
 			time_stringE = AM_PM(class_sections.info['End'])
-			for student in TAs.applicants:
-				if student.student_info[2] in assigned :
-					print(len(TAs.applicants))
-					TAs.applicants.remove(student)
-					pass
-											#Students
-				if inBurg(student):
-					if qualified(student,CID):
-						if timeCheck(student,daySet,time_stringS):
-							elig.append(student)
+			for student in TAs.applicants:#Students
+
+				if inBurg(student) and qualified(student,CID) and timeCheck(student,daySet,time_stringS):
+					elig.append(student)
 			
 		gq = prioritizeY(elig)
 			
@@ -215,14 +210,15 @@ for class_sections in C.classes : #Class section
 			
 		TA492 = all_[1]
 		TA392 = all_[0]
-			
+		assigned = set(assigned)
+
 		if (class_sections.info['TA392_ID'] == None):
 			i = 0
 			j = 0
 			if TA392:
 				while (TA392[i].student_info[2] in assigned and i < len(TA392)-1):
 					i+=1
-				if (i < len(TA392)):
+				if (i < len(TA392)-1):
 					class_sections.info['TA392_ID'] = TA392[i].student_info[2]
 				else:
 					class_sections.info['TA392_ID'] = None
@@ -232,24 +228,28 @@ for class_sections in C.classes : #Class section
 			if TA492 :	
 				while (TA492[j].student_info[2] in assigned and j < len(TA492)-1):
 					j+=1
-				if (j < len(TA492)):
+				if (j < len(TA492)-1):
 					class_sections.info['TA492_ID'] = TA492[j].student_info[2]
 				else:
 					class_sections.info['TA492_ID'] = None
 			else:
 				print("No eligible TA's in 492 array, using next 392 student.")
 				if TA392:
-					class_sections.info['TA492_ID'] = TA392[i+1].student_info[2]	
-				else:
-					print("No TA available")	
+					while (TA392[i].student_info[2] in assigned and i < len(TA392)-1):
+						i+=1
+					if (i < len(TA392)):
+						class_sections.info['TA492_ID'] = TA392[i].student_info[2]
+					else:
+						class_sections.info['TA492_ID'] = None	
+						print("No TA available")	
 								
 		print("-------------------------------")
 		print("CS"+class_sections.info['Cat'])
 		print(class_sections.info['TA392_ID'])
 		print(class_sections.info['TA492_ID'])
 		print("-------------------------------")
-		assigned.append(class_sections.info['TA392_ID'])
-		assigned.append(class_sections.info['TA492_ID'])
+		assigned.add(class_sections.info['TA392_ID'])
+		assigned.add(class_sections.info['TA492_ID'])
 		
 			
 			
@@ -257,7 +257,7 @@ for class_sections in C.classes : #Class section
 		print("No compatible combo")
 		pass
 
-	
+print(len(assigned))
 
 
 
