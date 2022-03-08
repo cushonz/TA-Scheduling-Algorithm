@@ -188,9 +188,6 @@ for class_sections in C.classes : #Class section
 	CID = class_sections.info['Cat']
 	daySet = dayMap(class_sections.info['Days'])
 	time_stringS = class_sections.info['Start']
-	#print("-----------------------------------------")
-	#print(CID + " with " + class_sections.info['Name']+ " at " + class_sections.info['Start'])
-	#print("-----------------------------------------")
 	
 	if time_stringS != ':AM':
 		if int(time_stringS[0]) > 3:
@@ -243,21 +240,36 @@ for class_sections in C.classes : #Class section
 						class_sections.info['TA492_ID'] = None	
 						print("No TA available")	
 								
-		print("-------------------------------")
-		print("CS"+class_sections.info['Cat'])
-		print(class_sections.info['TA392_ID'])
-		print(class_sections.info['TA492_ID'])
-		print("-------------------------------")
+		
 		assigned.add(class_sections.info['TA392_ID'])
 		assigned.add(class_sections.info['TA492_ID'])
+		if class_sections.info['TA392_ID'] == None and class_sections.info['TA492_ID'] == None:
+			pass
+		else:
+			print(CID + " with " + class_sections.info['Name']+ " at " + class_sections.info['Start'])
+			print("--------------------------------------------------------------")
+		if class_sections.info['TA392_ID']:
+			print("392 TA:" +class_sections.info['TA392_ID'])
+		if class_sections.info['TA492_ID']:
+			print("492 TA:"+class_sections.info['TA492_ID'])
+			print("---------------------------------------------------")
+		
+		
 		
 			
 			
 	else:
-		print("No compatible combo")
+		
 		pass
 
-print(len(assigned))
+for x in C.classes :
+	print("\nSubject: CS"+x.info['Cat'])
+	print("Professor: "+x.info['Name'])
+	print("Start Time: "+x.info['Start'])
+	print("392 Assignment: "+str(x.info['TA392_ID']))
+	print("492 Assignment: "+ str(x.info['TA492_ID']))
+
+
 
 
 
