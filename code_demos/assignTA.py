@@ -173,6 +173,7 @@ def posSplit(elig):
 		
 
 #----------Start Driver Code ------------------------
+#----------This code needs to connect to the front end-------------
 
 TAs = TA.TaArr("resources/studs.csv")
 
@@ -261,6 +262,8 @@ for class_sections in C.classes : #Class section
 	else:
 		
 		pass
+	
+	#------ This for loop is the one that needs to specifically go for the front end. ----------
 
 for x in C.classes :
 	print("\nSubject: CS"+x.info['Cat'])
