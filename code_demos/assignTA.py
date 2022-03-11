@@ -54,6 +54,7 @@ def timeCheck(TA_obj,dayMap,hour):		#the individual section will contain the day
 						#[0,1,2,3]
 						#for example, a class that meets "M T TH" would return [0,1,3]
 						
+						#stopped writing comments because no one else works on this lol
 	
 def dayMap(days):
 	rep = set([])
@@ -172,10 +173,8 @@ def posSplit(elig):
 	return TA1,TA2
 		
 
-#----------Start Driver Code ------------------------
-#----------This code needs to connect to the front end-------------
 
-TAs = TA.TaArr("resources/studs.csv")
+TAs = TA.TaArr("resources/students.csv")
 
 C = section.SectionArr("resources/schedule.csv",45)
 offered = sorted(all_subj(C))
@@ -192,7 +191,7 @@ for class_sections in C.classes : #Class section
 	
 	if time_stringS != ':AM':
 		if int(time_stringS[0]) > 3:
-			print("Outside of TA-able hours")
+			
 			pass
 		else:
 			time_stringS = AM_PM(class_sections.info['Start'])
@@ -243,36 +242,23 @@ for class_sections in C.classes : #Class section
 								
 		
 		assigned.add(class_sections.info['TA392_ID'])
-		assigned.add(class_sections.info['TA492_ID'])
-		if class_sections.info['TA392_ID'] == None and class_sections.info['TA492_ID'] == None:
-			pass
-		else:
-			print(CID + " with " + class_sections.info['Name']+ " at " + class_sections.info['Start'])
-			print("--------------------------------------------------------------")
-		if class_sections.info['TA392_ID']:
-			print("392 TA:" +class_sections.info['TA392_ID'])
-		if class_sections.info['TA492_ID']:
-			print("492 TA:"+class_sections.info['TA492_ID'])
-			print("---------------------------------------------------")
-		
-		
-		
-			
+		assigned.add(class_sections.info['TA492_ID'])		
 			
 	else:
-		
 		pass
-	
-	#------ This for loop is the one that needs to specifically go for the front end. ----------
-
+print("Resulting Assignments")
 for x in C.classes :
-	print("\nSubject: CS"+x.info['Cat'])
+	print("--------------------------------------\nSubject: CS"+x.info['Cat'])
 	print("Professor: "+x.info['Name'])
 	print("Start Time: "+x.info['Start'])
 	print("392 Assignment: "+str(x.info['TA392_ID']))
 	print("492 Assignment: "+ str(x.info['TA492_ID']))
-
-
+ca = []
+print("\nThe following students have not been assigned TA positions\n-----------------------------------------------------------")
+for student in TAs.applicants:
+	if student.student_info[2] not in assigned:
+		print(student.student_info[1]+", "+student.student_info[0])
+		ca.append(student.student_info[1]+", "+student.student_info[0])
 
 
 
