@@ -174,9 +174,9 @@ def posSplit(elig):
 		
 
 
-TAs = TA.TaArr("resources/students.csv")
+TAs = TA.TaArr("students.csv")
 
-C = section.SectionArr("resources/schedule.csv",45)
+C = section.SectionArr("schedule.csv",45)
 offered = sorted(all_subj(C))
 
 elig = []
