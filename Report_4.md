@@ -10,10 +10,7 @@ After running this the program will run and give the follwing output :
 
 ![alt_text](/documentation/finalized_output.png)
 
-The output includes detailed information about all classes and what students were assigned to what TA positions.
-
-
-This is all done automatically by priority and the left over students that either didn't qualify, or didnt have the time slot open will be put into a list of leftover students at the end of execution.
+This output is simply the class information(including newly made TA assignments) along with a list of students who were incompatible with the available TA positions.
 
 # assignTA.py:
 
