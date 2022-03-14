@@ -5,7 +5,7 @@ The information that is given is the Subject of the class, then the proffesor fo
 The code prints all of these and it look like this:
 
 
-![alt_text](/documentation/example.png)
+![alt_text](/documentation/finalize_output.png)
 
 
 Some of those classes have the 392/492 Assignment filled with the class number that the students will be assigned to. 
