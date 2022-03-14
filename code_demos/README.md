@@ -18,15 +18,15 @@ This is all done automatically by priority and the left over students that eithe
 
 Are program is ran in python and you will need to use python 3. The program is ran by using 3 files :
 
-assignTA.py
+# assignTA.py:
 
-  This is the driver code that will sort out the students to see what classes they can go into
+  This is the driver code that will sort out the students to see what classes they can go into.
 
-TA.py
+# TA.py:
 
   This file builds a TA object the organizes the TA information inside the object.
 
-section.py
+# section.py
 
   This file makes a directiry of all the classes to put the students in.
   
