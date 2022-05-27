@@ -1,32 +1,48 @@
-# CS480-Project
-Git Repository for CS480 project
+# Problem?
 
-The project so far :
+This was an algorithm developed for Computer Science 480 at Central Washington University.
 
-  	*Loops through all classes
-	*Extracts important infromation about the class
-	*Loop through all students
-	*check student info against class info and discard non matches.
-	*print list.
-      
-![alt_text](https://github.com/cushonz/CS480-Project/blob/main/documentation/prototype_output.png)
-      
-This approach was simple yet effective. Infromation is neatly indexed and easily accesible.
+The assignment was to create an alogrithm to assign students to Computer Science TA positions based off the given CSV files. How the data would be sorted/prioritized was for the students to decide. (See instructions in class documents)
 
-Moving forward we will need to implements a few more specific checks as well as making assignments in different order to optimize the end result of all assignments.
+When considering this problem I had to consider a multitude of different factors, some of which include: 
 
-# Update 2/23/22
+* Student graduation date/seniority
+* Prior Experience
+* Time availability
+* Location
 
-The code currently is capable of organizing and assiging students to the 392 and 492 positions
+# Solution!
 
-I have added the ability for 392 students to fill a 492 position when the 492 students have been depleted, that way no TA positions are going unfilled.
+## Finding Eligible Candidates!
 
-Thus far the code performs the following checks:
-	
-	* Time conflicts
-	* Location Conflicts
-	* Student Experience
-	
-After passing all of these tests a student will be added to a list of eligible students.
+After considering all of the above variables I decided the best way to proceed with assignment would be to create boolean methods to evaluate each variable.
 
-Assignments will then be made from this list.
+To accomplish this I developed an object called TA to store all CSV data in, the student object consists of fields:
+
+* Student_info (Array of strings containing general info about the student)
+* time (2-Dimensional Array used to index different time slots for each day of the week)
+* experience (an Array of 1/0 to denote passes or fails in classes.)
+
+I then created the following methods to perform checks on TA objects:
+
+* inBurg (Checks student location in student_info)
+* qualified (Ensures that the student has passed the class they are being assign to TA for)
+* TimeCheck (evalute the date and time and locate 2D time array)
+
+Student who pass all three tests will be added to a list of potential candidates called Elig.
+
+## Prioritize Eligible Candidates
+
+Since completeing CS392/492 is a graduation requirment at Central Washington University I decided to make the inital sort based on graduation date.
+
+Since many students share graduation dates this is still insufficient and will leave some students unhappy. Since CWU student ID numbers increment as students enroll, this means students with lower student IDs should be prioritized next since they would have seniority.
+
+After sorting by both graduation date and student ID number I then split the array based on if student were applying for the 392 or 492 position(See instructions.) 
+
+Finally students are assigned to TA positions from index 0 to n.
+
+
+
+
+
+
